@@ -7,14 +7,14 @@ def imp(cost_num,cpm_num):
   return imp
 
 def cost(imp_num,cpm_num):
-  cost = (cpm_num * imp_num) * 1000
+  cost = (cpm_num * imp_num) / 1000
   return cost
 
-print("Please select the corresponding number of the calculation you need")
+print("Please select the corresponding number of the calculation you need\n")
 
 print("1: Cost Per Thousand Impressions")
 print("2: You would like to know the total cost of a campaign")
-print("3:You would like to know the total number of impressions")
+print("3: You would like to know the total number of impressions\n")
 answer = input()
 
 if answer == "1":
@@ -32,3 +32,34 @@ else:
      cpm_num = float(input("if you have an ideal Cost Per Thousand you are trying to achieve, please enter:\n"))
      final_imp = imp(cost_num,cpm_num)
      print("your impressions are %d" %final_imp)
+
+again = input("Would you like another calculation? Y or N:")
+
+while again == "y":
+  print("Please select the corresponding number of the calculation you need")
+
+  print("1: Cost Per Thousand Impressions")
+  print("2: You would like to know the total cost of a campaign")
+  print("3: You would like to know the total number of impressions")
+  answer = input()
+
+  if answer == "1":
+    cost_num = float(input("please enter the cost of the campaign:\n"))
+    imp_num = int(input("please enter the number of impression of the campaign:\n"))
+    final_cpm = cpm(cost_num,imp_num)
+    print("your cmp is $%.2f" % final_cpm)
+  elif answer == "2":
+    imp_num = int(input("please enter the number of impression of the campaign:\n"))
+    cpm_num = float(input("if you have an ideal Cost Per Thousand you are trying to achieve, please enter:\n"))
+    final_cost = cost(imp_num,cpm_num)
+    print("your cost is $%.2f" % final_cost)
+  else:
+      cost_num = float(input("please enter the cost of the campaign:\n"))
+      cpm_num = float(input("if you have an ideal Cost Per Thousand you are trying to achieve, please enter:\n"))
+      final_imp = imp(cost_num,cpm_num)
+      print("your impressions are %d" %final_imp)
+
+  again = input("Would you like another calculation? Y or N:")    
+
+
+print("Thank you... Come again")  

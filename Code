@@ -13,8 +13,8 @@ def cost(imp_num,cpm_num):
 print("Please select the corresponding number of the calculation you need\n")
 
 print("1: Cost Per Thousand Impressions")
-print("2: You would like to know the total cost of a campaign")
-print("3: You would like to know the total number of impressions\n")
+print("2: Total cost of a campaign")
+print("3: Total number of impressions\n")
 answer = input()
 
 if answer == "1":
@@ -22,25 +22,29 @@ if answer == "1":
   imp_num = int(input("please enter the number of impression of the campaign:\n"))
   final_cpm = cpm(cost_num,imp_num)
   print("your cmp is $%.2f" % final_cpm)
+  if final_cpm >= 15.00:
+    print("$%.2f CPM is a bit high" % final_cpm)
+  else:
+    print("$%.2f CPM is within our standard range" % final_cpm)  
 elif answer == "2":
    imp_num = int(input("please enter the number of impression of the campaign:\n"))
-   cpm_num = float(input("if you have an ideal Cost Per Thousand you are trying to achieve, please enter:\n"))
+   cpm_num = float(input(" Cost Per Thousand you are trying to achieve\n"))
    final_cost = cost(imp_num,cpm_num)
    print("your cost is $%.2f" % final_cost)
 else:
      cost_num = float(input("please enter the cost of the campaign:\n"))
-     cpm_num = float(input("if you have an ideal Cost Per Thousand you are trying to achieve, please enter:\n"))
+     cpm_num = float(input(" Cost Per Thousand you are trying to achieve:\n"))
      final_imp = imp(cost_num,cpm_num)
      print("your impressions are %d" %final_imp)
 
-again = input("Would you like another calculation? Y or N:")
+again = input("\nWould you like another calculation? Y or N:")
 
 while again == "y":
   print("Please select the corresponding number of the calculation you need")
 
-  print("1: Cost Per Thousand Impressions")
-  print("2: You would like to know the total cost of a campaign")
-  print("3: You would like to know the total number of impressions")
+  print("\n1: Cost Per Thousand Impressions")
+  print("2: Total cost of a campaign")
+  print("3: Total number of impressions")
   answer = input()
 
   if answer == "1":
@@ -48,18 +52,22 @@ while again == "y":
     imp_num = int(input("please enter the number of impression of the campaign:\n"))
     final_cpm = cpm(cost_num,imp_num)
     print("your cmp is $%.2f" % final_cpm)
+    if final_cpm >= 15.00:
+      print("$%.2f CPM is a bit high" % final_cpm)
+    else:
+      print("$%.2f CPM is within our standard range" % final_cpm)
   elif answer == "2":
     imp_num = int(input("please enter the number of impression of the campaign:\n"))
-    cpm_num = float(input("if you have an ideal Cost Per Thousand you are trying to achieve, please enter:\n"))
+    cpm_num = float(input("Cost Per Thousand you are trying to achieve:\n"))
     final_cost = cost(imp_num,cpm_num)
     print("your cost is $%.2f" % final_cost)
   else:
       cost_num = float(input("please enter the cost of the campaign:\n"))
-      cpm_num = float(input("if you have an ideal Cost Per Thousand you are trying to achieve, please enter:\n"))
+      cpm_num = float(input("Cost Per Thousand you are trying to achieve, :\n"))
       final_imp = imp(cost_num,cpm_num)
       print("your impressions are %d" %final_imp)
 
   again = input("Would you like another calculation? Y or N:")    
 
 
-print("Thank you... Come again")  
+print("\nThank you... Come again")  

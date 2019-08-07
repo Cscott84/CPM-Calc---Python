@@ -1,5 +1,5 @@
 def cpm(cost_num,imp_num):
-  cpm = (cost_num / imp_num) * 100
+  cpm = (cost_num / imp_num) * 1000
   return cpm 
 
 def imp(cost_num,cpm_num):
